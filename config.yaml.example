@@ -2,5 +2,6 @@ html_path: stored_html/
 user_agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0
 base_contractor_url: http://smb.cidb.gov.my/contractor/contractors/information/
 base_project_url:  http://smb.cidb.gov.my/contractor/contractors/project/
+base_director_url: http://smb.cidb.gov.my/contractor/contractors/director/
 base_url: http://smb.cidb.gov.my/contractor/contractors/
 db_path: data.db

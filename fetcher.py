@@ -30,6 +30,7 @@ def fetch_data():
         if contr_id in processed_id:
             info_path = os.path.join(config["html_path"], "information_%s.html" % contr_id)
             project_path = os.path.join(config["html_path"], "project_%s.html" % contr_id)
+            director_path = os.path.join(config["html_path"], "director_%s.html" % contr_id)
             # Just in case we deleted the file
             if os.path.exists(info_path) and os.path.exists(project_path):
                 logging.warn("existing")
@@ -38,6 +39,7 @@ def fetch_data():
 
         fetch_page("information", contr_id)
         fetch_page("project", contr_id)
+        fetch_page("director", contr_id)
         logging.warn("Page stored")
 
         processed_id.add(contr_id)
