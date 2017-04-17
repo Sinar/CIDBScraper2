@@ -1,5 +1,7 @@
 __author__ = 'sweemeng'
 import requests
+import socks
+import socket
 import yaml
 import os
 import random
@@ -10,7 +12,11 @@ import cPickle as pickle
 
 
 MIN_PAGE_ID = 1
-MAX_PAGE_ID = 217898
+MAX_PAGE_ID = 257811
+
+socks.set_default_proxy(socks.SOCKS5, "127.0.0.1", 9050)
+socket.socket = socks.socksocket
+
 config = yaml.load(open("config.yaml"))
 
 # TODO: Catch exception
@@ -44,7 +50,7 @@ def fetch_data():
 
         processed_id.add(contr_id)
         contr_id += 1
-        time.sleep(0.1)
+        time.sleep(1)
         pickle.dump(processed_id, open("stored.pickle", "w"))
 
 
